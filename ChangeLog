@@ -52,3 +52,7 @@
 	* Added a 'make dmg' target.
 2015-01-21 Fred Gleason <fredg@paravelsystems.com>
 	* Added a description to 'README'.
+2015-01-21 Fred Gleason <fredg@paravelsystems.com>
+	* Moved 'configure.in' to 'configure.ac'.
+	* Modernized autotools invocation in 'configure.ac', 'Makefile.am'
+	and 'autogen.sh'.

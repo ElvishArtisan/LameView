@@ -25,7 +25,7 @@
 AM_CPPFLAGS = -Wall -DPREFIX=\"$(prefix)\"
 #INCLUDES = 
 #LIBS = 
-MOC = moc
+MOC = @MOC@
 
 # The dependency for qt's Meta Object Compiler (moc)
 moc_%.cpp:	%.h

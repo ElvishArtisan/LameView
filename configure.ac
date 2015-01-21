@@ -22,9 +22,11 @@ dnl   License along with this program; if not, write to the Free Software
 dnl   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 dnl
 
-AC_INIT(lameview,`cat PACKAGE_VERSION`,Fred Gleason <fredg@paravelsystems.com>)
-AM_INIT_AUTOMAKE(lameview,`cat PACKAGE_VERSION`)
+AC_INIT([lameview],m4_esyscmd(cat PACKAGE_VERSION))
+AM_INIT_AUTOMAKE
 AC_SUBST(RPM_RELEASE,1)
+m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+AC_CONFIG_MACRO_DIR([m4])
 
 #
 # Some Fully Resolved Install Paths
@@ -85,6 +87,8 @@ fi
 # Check for Qt4 (Mandatory)
 #
 AC_CHECK_HEADER(QtCore/QtCore,[],[AC_MSG_ERROR([*** Qt4 not found ***])])
+AC_CHECK_PROG(MOC_NAME,moc-qt4,[moc-qt4],[moc])
+AC_SUBST(MOC,$MOC_NAME)
 
 #
 # Check for Libsndfile (Mandatory)
@@ -152,16 +156,16 @@ else
 fi
 
 AC_CONFIG_FILES([ \
-    ./lameview.spec \
-    ./icons/Makefile \
-    ./xdg/Makefile \
-    ./lameview/Makefile \
-    ./make_bundle.sh \
-    ./Info.plist \
-    ./Makefile \
+    lameview.spec \
+    icons/Makefile \
+    xdg/Makefile \
+    lameview/Makefile \
+    make_bundle.sh \
+    Info.plist \
+    Makefile \
 ])
 AC_OUTPUT()
-chmod 755 ./make_bundle.sh
+chmod 755 make_bundle.sh
 
 #
 # Configuration Results
