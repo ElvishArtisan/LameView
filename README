@@ -1,1 +1,5 @@
 This is the README file for the LameView package.
+
+LameView is a GUI utility for the mass conversion of audio files.
+At present, it supports conversion of PCM audio WAV files to MPEG Layer 2
+or 3 ('MP2' or 'MP3').

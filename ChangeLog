@@ -29,7 +29,7 @@
 2010-06-25 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 1.0.2.
 2010-12-09 Fred Gleason <fredg@paravelsystems.com>
-	* Cleaned up unnecessary statements in 'autogen.sh' and 
+	* Cleaned up unnecessary statements in 'autogen.sh' and
 	'configure.in'.
 2010-12-09 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 1.0.3.
@@ -43,10 +43,12 @@
 2011-03-10 Fred Gleason <fredg@paravelsystems.com>
 	* Modified 'lameview/Makefile.am' to build properly on OS-X.
 2011-03-11 Fred Gleason <fredg@paravelsystems.com>
-        * Modified 'lameview/lameview.cpp' to position elements properly 
+        * Modified 'lameview/lameview.cpp' to position elements properly
 	on OS-X.
 2011-03-11 Fred Gleason <fredg@paravelsystems.com>
-        * Modified 'lameview/lameview.cpp' to position elements properly 
+        * Modified 'lameview/lameview.cpp' to position elements properly
 	on Linux.
 2011-03-11 Fred Gleason <fredg@paravelsystems.com>
 	* Added a 'make dmg' target.
+2015-01-21 Fred Gleason <fredg@paravelsystems.com>
+	* Added a description to 'README'.
