@@ -1,0 +1,17 @@
+*~
+*.o
+*.spec
+Info.plist
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache
+config.log
+config.status
+configure
+depcomp
+.deps
+install-sh
+make_bundle.sh
+missing
+moc_*
