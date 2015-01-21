@@ -1,0 +1,10 @@
+This is the installation file for the LameView package.
+
+QT-4 NOTES
+Some distros may require that the CPPFLAGS and LDFLAGS environmental
+variables be set prior to running ./configure in order for Qt 4 to be detected
+properly.  Some known case are:
+
+CentOS/RedHat:  export CPPFLAGS=-I/usr/lib64/qt4/include
+                export LDFLAGS=-L/usr/lib64/qt4/lib64
+                export PATH=/usr/lib64/qt4/bin:$PATH

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=Qt;KDE;AudioVideo;
+Encoding=UTF-8
+Name=LameView
+GenericName=MPEG Encoder
+Exec=lameview
+Icon=lameview
+Path=
+Type=Application
+Terminal=false
+

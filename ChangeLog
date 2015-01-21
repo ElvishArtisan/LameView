@@ -1,0 +1,52 @@
+2010-01-04 Fred Gleason <fredg@paravelsystems.com>
+	* Initial package creation.
+2010-01-04 Fred Gleason <fredg@paravelsystems.com>
+	* Added tests for 'libsndfile', 'libsamplerate', LAME and TwoLAME
+	in 'configure.in'.
+	* Implemented MPEG Layer 2 encoding.
+2010-01-04 Fred Gleason <fredg@paravelsystems.com>
+	* Implemented 'lameview.spec.in'.
+2010-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Implemented sample-rate conversion in 'lameview/layer2.cpp'.
+2010-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Implemented progress bars.
+	* Implemented Abort button.
+2010-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Implemented MPEG Layer 3 encoding in 'lameview/layer3.cpp'.
+2010-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Added icons in 'icons/'.
+	* Added a desktop entry in 'xdg/lameview.desktop'.
+2010-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.0.
+2010-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added icons for fvwm(1) in 'lameview.spec.in'.
+	* Added a '--with-debug' switch in 'configure.in'.
+2010-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.1.
+2010-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Corrected an incorrectly sized icon image in
+	'icons/lameview-16x16.xpm'.
+2010-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.2.
+2010-12-09 Fred Gleason <fredg@paravelsystems.com>
+	* Cleaned up unnecessary statements in 'autogen.sh' and 
+	'configure.in'.
+2010-12-09 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.3.
+2010-12-09 Fred Gleason <fredg@paravelsystems.com>
+	* Changed icons to use transparent background.
+2010-12-09 Fred Gleason <fredg@paravelsystems.com>
+	* Changed the name of 'xdg/lameview-lameview.desktop' to
+	'xdg/lameview_lameview.desktop'.
+2010-12-09 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.4.
+2011-03-10 Fred Gleason <fredg@paravelsystems.com>
+	* Modified 'lameview/Makefile.am' to build properly on OS-X.
+2011-03-11 Fred Gleason <fredg@paravelsystems.com>
+        * Modified 'lameview/lameview.cpp' to position elements properly 
+	on OS-X.
+2011-03-11 Fred Gleason <fredg@paravelsystems.com>
+        * Modified 'lameview/lameview.cpp' to position elements properly 
+	on Linux.
+2011-03-11 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make dmg' target.

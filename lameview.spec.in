@@ -1,0 +1,100 @@
+## lameview.spec.in
+##
+##    Lameview RPM Spec File
+##    Copyright (C) 2009 Fred Gleason <fredg@paravelsystems.com>
+##
+##      $Id: lameview.spec.in,v 1.5 2010/12/09 18:32:35 cvs Exp $
+##
+##    This program is free software; you can redistribute it and/or modify
+##    it under the terms of version 2 of the GNU General Public License as
+##    published by the Free Software Foundation;
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program; if not, write to the Free Software
+##    Foundation, Inc., 59 Temple Place, Suite 330, 
+##    Boston, MA  02111-1307  USA
+##
+
+Summary: GUI Front-End for LAME and TwoLAME MPEG Encoders
+Name: lameview
+Version: @VERSION@
+Release: @RPM_RELEASE@
+License: GPL
+Packager: Fred Gleason <fredg@paravelsystems.com>
+Group: Productivity/Multimedia/Other
+Source: lameview-@VERSION@.tar.gz
+BuildRoot: /var/tmp/lameview-@VERSION@
+
+%description
+LameView is a GUI front-end for the LAME and TwoLAME MPEG encoders.  It 
+provides a convenient visual interface for setting encoder parameters and
+supports batch jobs to a single destination directory.
+
+%prep
+
+
+%setup
+
+
+%build
+./configure --prefix=@LOCAL_PREFIX@
+make
+
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+mkdir -p $RPM_BUILD_ROOT@LOCAL_PREFIX@/bin
+cp lameview/lameview $RPM_BUILD_ROOT@LOCAL_PREFIX@/bin/
+mkdir -p $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/16x16/apps
+cp icons/lameview-16x16.xpm $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/16x16/apps/lameview.xpm
+mkdir -p $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/32x32/apps
+cp icons/lameview-32x32.xpm $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/32x32/apps/lameview.xpm
+mkdir -p $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/48x48/apps
+cp icons/lameview-48x48.xpm $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/48x48/apps/lameview.xpm
+mkdir -p $RPM_BUILD_ROOT@LOCAL_PREFIX@/share/X11/fvwm2/pixmaps
+cp icons/lameview-16x16.xpm $RPM_BUILD_ROOT@LOCAL_PREFIX@/share/X11/fvwm2/pixmaps/mini.lameview.xpm
+cp icons/lameview-32x32.xpm $RPM_BUILD_ROOT@LOCAL_PREFIX@/share/X11/fvwm2/pixmaps/lameview.xpm
+mkdir -p $RPM_BUILD_ROOT/usr/share/applications
+cp xdg/lameview_lameview.desktop $RPM_BUILD_ROOT/usr/share/applications/lameview_lameview.desktop
+if test "@STRIP_DEBUG@" = "yes" ; then
+  strip $RPM_BUILD_ROOT@LOCAL_PREFIX@/bin/lameview
+fi
+
+%post
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root)
+@LOCAL_PREFIX@/bin/lameview
+/opt/kde3/share/icons/hicolor/16x16/apps/lameview.xpm
+/opt/kde3/share/icons/hicolor/32x32/apps/lameview.xpm
+/opt/kde3/share/icons/hicolor/48x48/apps/lameview.xpm
+@LOCAL_PREFIX@/share/X11/fvwm2/pixmaps/mini.lameview.xpm
+@LOCAL_PREFIX@/share/X11/fvwm2/pixmaps/lameview.xpm
+/usr/share/applications/lameview_lameview.desktop
+%doc AUTHORS
+%doc ChangeLog
+%doc COPYING 
+%doc INSTALL 
+%doc NEWS 
+%doc README 
+
+
+%changelog
+* Thu Dec 09 2010 Fred Gleason <fredg@paravelsystems.com>
+-- Refactored desktop entry.
+* Fri Jun 25 2010 Fred Gleason <fredg@paravelsystems.com>
+-- Added icons for fvwm(1).
+-- Added code to strip binaries.
+* Tue Jan 05 2010 Fred Gleason <fredg@paravelsystems.com>
+-- Added icons and desktop entries.
+* Mon Jan 04 2010 Fred Gleason <fredg@paravelsystems.com>
+-- Initial RPM creation.
