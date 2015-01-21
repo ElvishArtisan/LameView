@@ -56,3 +56,8 @@
 	* Moved 'configure.in' to 'configure.ac'.
 	* Modernized autotools invocation in 'configure.ac', 'Makefile.am'
 	and 'autogen.sh'.
+2015-01-21 Fred Gleason <fredg@paravelsystems.com>
+	* Refactored 'make rpm' target to use home directory based build tree.
+	* Added 'icons/lameview-16x16.png'.
+	* Moved 'icons/lameview-32x32.xpm' to 'icons/lameview-32x32.png'.
+	* Moved 'icons/lameview-48x48.xpm' to 'icons/lameview-48x48.png'.

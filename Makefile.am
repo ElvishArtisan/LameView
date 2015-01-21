@@ -32,12 +32,12 @@ dmg:	all
 	./make_bundle.sh
 
 rpm:	dist
-	cp lameview-$(VERSION).tar.gz $(RPM_ROOT)/SOURCES/
+	cp lameview-$(VERSION).tar.gz $(HOME)/rpmbuild/SOURCES/
 	$(RPMBUILD) -ba --target $(ARCH)-$(VENDOR)-linux lameview.spec
-	mv $(RPM_ROOT)/RPMS/$(ARCH)/lameview-$(VERSION)-@RPM_RELEASE@.$(ARCH).rpm $(top_srcdir)/
-	mv $(RPM_ROOT)/SRPMS/lameview-$(VERSION)-@RPM_RELEASE@.src.rpm $(top_srcdir)/
-	rm $(RPM_ROOT)/SOURCES/lameview-$(VERSION).tar.gz
-	rm -rf $(RPM_ROOT)/BUILD/lameview-$(VERSION)
+	mv $(HOME)/rpmbuild/RPMS/$(ARCH)/lameview-$(VERSION)-@RPM_RELEASE@.$(ARCH).rpm $(top_srcdir)/
+	mv $(HOME)/rpmbuild/SRPMS/lameview-$(VERSION)-@RPM_RELEASE@.src.rpm $(top_srcdir)/
+	rm $(HOME)/rpmbuild/SOURCES/lameview-$(VERSION).tar.gz
+	rm -rf $(HOME)/rpmbuild/BUILD/lameview-$(VERSION)
 
 slack:	all
 	./make_slack

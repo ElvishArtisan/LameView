@@ -154,6 +154,7 @@ if test $ar_gcc_arch = x86_64 ; then
 else
   AC_SUBST(LW_LIB_PATH,lib)
 fi
+AC_SUBST(RPM_DATESTAMP,`date +%a\ %b\ %d\ %Y`)
 
 AC_CONFIG_FILES([ \
     lameview.spec \

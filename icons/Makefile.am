@@ -22,10 +22,24 @@
 ##
 ## Use automake to process this into a Makefile.in
 
-EXTRA_DIST = lameview.ico\
+install-exec-am:	
+	mkdir -p $(DESTDIR)@prefix@/share/icons/hicolor/16x16/apps
+	cp lameview-16x16.png $(DESTDIR)@prefix@/share/icons/hicolor/16x16/apps/lameview.png
+	mkdir -p $(DESTDIR)@prefix@/share/icons/hicolor/32x32/apps
+	cp lameview-32x32.png $(DESTDIR)@prefix@/share/icons/hicolor/32x32/apps/lameview.png
+	mkdir -p $(DESTDIR)@prefix@/share/icons/hicolor/48x48/apps
+	cp lameview-48x48.png $(DESTDIR)@prefix@/share/icons/hicolor/48x48/apps/lameview.png
+
+uninstall:	
+	rm -f $(DESTDIR)@prefix@/share/icons/hicolor/16x16/apps/lameview.png
+	rm -f $(DESTDIR)@prefix@/share/icons/hicolor/32x32/apps/lameview.png
+	rm -f $(DESTDIR)@prefix@/share/icons/hicolor/48x48/apps/lameview.png
+
+EXTRA_DIST = LameView.ico\
+             lameview-16x16.png\
              lameview-16x16.xpm\
-             lameview-32x32.xpm\
-             lameview-48x48.xpm
+             lameview-32x32.png\
+             lameview-48x48.png
 
 CLEANFILES = *~
 MAINTAINERCLEANFILES = *~ Makefile.in configure aclocal.m4

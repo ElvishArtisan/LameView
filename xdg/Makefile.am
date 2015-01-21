@@ -21,6 +21,13 @@
 ##
 ## Use automake to process this into a Makefile.in
 
+install-exec-am:	
+	mkdir -p $(DESTDIR)@prefix@/share/applications
+	cp lameview_lameview.desktop $(DESTDIR)@prefix@/share/applications/
+
+uninstall:	
+	rm -f $(DESTDIR)@prefix@/share/applications/lameview_lameview.desktop
+
 EXTRA_DIST = lameview_lameview.desktop
 
 CLEANFILES = *~
